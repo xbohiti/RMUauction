@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RMU Virtual Charity Benefit Auction Site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://i.postimg.cc/MG2gSRb3/RMU-Foundation-Logo-min-sm.png" type="image/x-icon">
+    <meta name="description" content="Join us for the RMU Virtual Charity Benefit Auction to support our cause. Bid on exclusive items and make a difference today!">
+    <meta property="og:title" content="RMU Virtual Charity Benefit Auction">
+    <meta property="og:description" content="Bid on exclusive items and support a good cause at the RMU Virtual Charity Benefit Auction.">
+    <meta property="og:image" content="https://i.postimg.cc/YSfSHHbB/auction-site-banner.jpg">
+    <meta property="og:url" content="https://www.rmu.foundation/auction">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <div class="container">
+        <header id="main-header">
+            <div class="header-content">
+                <a href="https://www.rmu.foundation" class="rmu-button">Back to RMU Foundation Website</a>
+                <div class="banner">
+                    <img src="https://i.postimg.cc/rmVTBrvT/auction-site-banner.jpg" alt="Auction Banner" class="banner-image">
+                </div>
+            </div>
+            <h3>100% of the funds raised will be donated and used according to the official budget for the Phygital Food Project</h3>
+        </header>
+        <main>
+            <div class="auth-container">
+                <section id="registration-section">
+                    <h2>Register</h2>
+                    <form id="registration-form">
+                        <input type="text" id="register-username" placeholder="Username" required>
+                        <input type="email" id="register-email" placeholder="Email" required>
+                        <input type="password" id="register-password" placeholder="Password" required>
+                        <input type="text" id="register-name" placeholder="Real Name or Nickname" required>
+                        <div class="g-recaptcha" data-sitekey="6LeM-T0qAAAAAIHSqL3hgTYbBG32yAXoOgkwpI_u"></div>
+                        <button type="submit">Register</button>
+                    </form>
+                </section>
+                <section id="login-section">
+                    <h2>Login</h2>
+                    <form id="login-form">
+                        <input type="text" id="login-username" placeholder="Username" required>
+                        <input type="password" id="login-password" placeholder="Password" required>
+                        <div class="g-recaptcha" data-sitekey="6LeM-T0qAAAAAIHSqL3hgTYbBG32yAXoOgkwpI_u"></div>                        
+                        <button type="submit">Login</button>
+                    </form>
+                </section>
+            </div>
+            <h3>After registering a username and logging in, place your bids on the items below.</h3>
+            <h3>All amounts are in US Dollars.</h3>
+            <h3>If you win an item, click the 'CLAIM' button at the bottom of the page and fill out the form.</h3>
+            <h2 id="section-title"> Standard Auction Items</h2>
+            <section id="standard-items-container">
+                <!-- Standard auction items will be dynamically added here -->
+            </section>
+            <section id="standard-pagination">
+                <!-- Pagination controls for standard items -->
+            </section>
+
+            <h2 id="section-title">Special Auction Items</h2>
+            <section id="special-items-container">
+                <!-- Special auction items will be dynamically added here -->
+            </section>
+            <section id="special-pagination">
+                <!-- Pagination controls for special items -->
+            </section>
+            <div class="closer">
+            <section id="payment-options">
+                <h2>Did You Win An Auction? Pay For & Claim Your Items Here:</h2>
+                <div class="payment-buttons">
+                    <a href="https://www.rmu.foundation/events/auction/claim" class="payment-button" target="_blank">
+                        CLAIM
+                    </a>
+                </div>
+            </section>
+
+            <section id="submit-items">
+                <h2>Submit Items to Our Future Auctions Here:</h2>
+                <div class="submit-buttons">
+                    <a href="https://www.rmu.foundation/events/contribute/auction-donations" class="submit-button" target="_blank">
+                        Fill Out the Form
+                    </a>
+                </div>
+            </section>
+            <section id="sponsors-section">
+  <h2>Thank You to Our Sponsors:</h2>
+  <div id="sponsors-container"></div>
+</section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 RMU Foundation. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

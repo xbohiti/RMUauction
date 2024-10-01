@@ -1,0 +1,743 @@
+body {
+    font-family: 'EB Garamond', 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Header Styles */
+header {
+    background-color: #0000ff;
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column; /* Stack button and banner vertically */
+    align-items: center; /* Center align the content */
+}
+.g-recaptcha {
+    align-self: center;
+}
+.banner {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.rmu-button {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #000750;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.rmu-button:hover {
+    background-color: #000a8f;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 255, 0.2);
+}
+
+/* Main Content Styles */
+main {
+    background-color: #000020;
+    padding: 15px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#section-title {
+    text-align: center;
+    font-size: 1.8em;
+    margin-top: 30px;
+}
+
+main h2 {
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+main h3, #main-header h3 {
+    width: 100%;
+    max-width: 90%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Bid Section Styles */
+#bid-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#username-input {
+    width: calc(100% - 24px);
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 25px;
+    background-color: #2c2c2c;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+#username-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #3f51b5;
+}
+
+/* Items Container Styles */
+#standard-items-container, #special-items-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+width: 100%;
+}
+
+.auction-item {
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.auction-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 255, 0.2);
+}
+
+.auction-item h3 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.auction-item .image-container {
+    height: 330px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.auction-item .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.auction-item:hover .image-container img {
+    transform: scale(1.05);
+}
+
+.auction-item p {
+    margin: 8px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.auction-item .donor {
+    font-size: 16px;
+    font-style: italic;
+    color: #bf00ff;
+    margin-bottom: 10px;
+}
+.auction-item .blockchain {
+    font-size: 14px;
+    color: #fef65b;
+    margin-bottom: 10px;
+}
+
+.auction-item p:nth-of-type(3),
+.auction-item p:nth-of-type(4),
+.auction-item p:nth-of-type(5) {
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.auction-item p:nth-of-type(3) { color: #00fffb; }
+.auction-item p:nth-of-type(4) { color: #cd1ae5; }
+.auction-item p:nth-of-type(5) { color: #a500ff; }
+
+.auction-item .highest {
+    font-size: 15px;
+    color: #00e700;
+}
+
+.auction-item .bidding {
+    font-size: 15px;
+    color: #ff0000;
+}
+
+.auction-item input[type="number"] {
+    width: calc(100% - 24px);
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #3e3e3e;
+    color: #ffffff;
+}
+
+.auction-item input[type="number"]::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.auction-item button,
+.auction-item .info-button {
+    display: block; 
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.auction-item button {
+    background-color: #0000ff;
+    color: #ffffff;
+}
+
+.auction-item button:hover {
+    background-color: #00c603;
+}
+
+.auction-item .info-button {
+    background-color: #00008b; /* Different color for Info button */
+    color: rgb(255, 255, 255);
+    text-align: center; /* Center text in the button */
+    text-decoration: none;
+    width: 94%;
+}
+.auction-item .info-button:hover {
+    background-color: #00eeff;
+    color: #000000;
+}
+
+/* Pagination Styles */
+#standard-pagination, #special-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+#standard-pagination button, #special-pagination button {
+    background-color: #0000ff;
+    color: #ffffff;
+    border: none;
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+#standard-pagination button:hover, #special-pagination button:hover {
+    background-color: #4d4dff;
+}
+
+#standard-pagination span, #special-pagination span {
+    margin: 0 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#standard-pagination button:disabled, #special-pagination button:disabled {
+    background-color: #1e1e1e;
+    cursor: not-allowed;
+}
+
+.closer {
+   display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+/* Payment Options Styles */
+#payment-options, #submit-items {
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+    text-align: center;
+    align-items: center;
+    width: 50%;
+}
+
+#payment-options h2 {
+    color: #ffffff;
+    margin: 0 0 15px 0;
+}
+
+.payment-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.payment-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #008b15;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 80%;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.payment-button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Submit Items Styles */
+#submit-items {
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#submit-items h2 {
+    color: #ffffff;
+    margin: 0 0 15px 0;
+}
+
+.submit-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0000ff;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 80%;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.submit-button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #0000ff;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* Bid Feedback Styles */
+.bid-feedback {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.bid-feedback.success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.bid-feedback.error {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Special Items Styles */
+#special-items-container .auction-item {
+    background-color: #380055;
+}
+
+/* Form Input Styles */
+input[type="number"], input[type="text"] {
+    background-color: #1a1a1a;
+    border: 1px solid #3a3a3a;
+    color: #ffffff;
+    padding: 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+input[type="number"]:focus, input[type="text"]:focus {
+    border-color: #0000ff;
+    box-shadow: 0 0 0 2px rgba(0, 0, 255, 0.2);
+}
+
+/* Button Styles */
+button, .info-button {
+    background-color: #0000ff;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+button:hover, .info-button:hover {
+    background-color: #4d4dff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 255, 0.2);
+}
+
+/* Authentication Sections */
+#registration-section, #login-section {
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    width: 30%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#registration-form, #login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+#registration-form input, #login-form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    width: calc(100% - 20px);
+}
+
+#registration-form button, #login-form button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #0000ff;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#registration-form button:hover, #login-form button:hover {
+    background-color: #4d4dff;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #ffffff;
+    color: black;
+}
+body.dark-mode #registration-section,
+body.dark-mode #login-section {
+    background-color: #001eff;
+    color: white;
+}
+
+body.dark-mode main,
+body.dark-mode .auth-container,
+body.dark-mode #standard-items-container,
+body.dark-mode #special-items-container {
+    background-color: #acf6ff;
+}
+body.dark-mode .auction-item{
+    background-color: 9f9f9f;
+}
+
+
+/* Progress Bar Styles */
+.progress-bar-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    height: 5px;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #0000ff;
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+/* Gavel Animation Styles */
+.gavel-animation {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+}
+
+/* Winner Announcement Styles */
+.winner-announcement {
+    color: #FFD700;
+    font-weight: bold;
+    animation: pulse 1s infinite;
+}
+
+.no-winner {
+    color: #FF4500;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* New Highest Bid Animation */
+.new-highest-bid {
+    animation: highlight 1s ease-in-out;
+}
+
+@keyframes highlight {
+    0% { background-color: #FFD700; }
+    100% { background-color: transparent; }
+}
+
+/* Dark Mode Toggle Button */
+#dark-mode-toggle {
+    background: none;
+    border: none;
+    font-size:
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: black;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    #standard-items-container, #special-items-container {
+        grid-template-columns: 1fr;
+    }
+
+    .auction-item {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 15px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rmu-button {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .banner-image {
+        max-height: 200px;
+    }
+
+    #username-input {
+        width: calc(100% - 24px);
+    }
+
+    /* Make registration and login containers wider on mobile */
+    #registration-section, #login-section {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Adjust pagination controls for mobile */
+    #standard-pagination, #special-pagination {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #standard-pagination button, #special-pagination button,
+    #standard-pagination span, #special-pagination span {
+        margin: 5px;
+    }
+
+    /* Adjust payment and submit buttons for mobile */
+    .payment-buttons, .submit-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .payment-button, .submit-button {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+}
+#sponsors-section {
+  background-color: #2c2c2c;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+#sponsors-section h2 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+#sponsors-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.sponsor-item {
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.sponsor-item:hover {
+  transform: scale(1.05);
+}
+
+.sponsor-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Additional styles to ensure content fits within main container */
+main {
+    overflow-x: hidden;
+}
+
+.auction-item {
+    max-width: 100%;
+}
+
+/* Ensure images don't overflow their containers */
+.auction-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Adjust font sizes for better readability on mobile */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .auction-item h3 {
+        font-size: 1.2em;
+    }
+}
+
+/* Ensure pagination controls fit on one line */
+#standard-pagination, #special-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+#standard-pagination button, #special-pagination button,
+#standard-pagination span, #special-pagination span {
+    white-space: nowrap;
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 480px) {
+    .auction-item .image-container {
+        height: 320px;
+    }
+
+    #standard-pagination, #special-pagination {
+        font-size: 12px;
+    }
+
+    #standard-pagination button, #special-pagination button {
+        padding: 8px 12px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .g-recaptcha iframe {
+        transform: scale(0.8);
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .g-recaptcha iframe {
+        transform: scale(0.7);
+    }
+}
